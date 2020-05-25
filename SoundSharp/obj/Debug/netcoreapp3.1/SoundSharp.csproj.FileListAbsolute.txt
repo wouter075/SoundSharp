@@ -1,0 +1,12 @@
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/bin/Debug/netcoreapp3.1/SoundSharp.deps.json
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/bin/Debug/netcoreapp3.1/SoundSharp.runtimeconfig.json
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/bin/Debug/netcoreapp3.1/SoundSharp.runtimeconfig.dev.json
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/bin/Debug/netcoreapp3.1/SoundSharp.dll
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/bin/Debug/netcoreapp3.1/SoundSharp.pdb
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/obj/Debug/netcoreapp3.1/SoundSharp.csprojAssemblyReference.cache
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/obj/Debug/netcoreapp3.1/SoundSharp.csproj.CoreCompileInputs.cache
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/obj/Debug/netcoreapp3.1/SoundSharp.AssemblyInfoInputs.cache
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/obj/Debug/netcoreapp3.1/SoundSharp.AssemblyInfo.cs
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/obj/Debug/netcoreapp3.1/SoundSharp.dll
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/obj/Debug/netcoreapp3.1/SoundSharp.pdb
+/Users/hlw1404/RiderProjects/SoundSharp/SoundSharp/obj/Debug/netcoreapp3.1/SoundSharp.genruntimeconfig.cache

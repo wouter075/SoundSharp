@@ -1,0 +1,12 @@
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/bin/Debug/netcoreapp3.1/Opdracht2.deps.json
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/bin/Debug/netcoreapp3.1/Opdracht2.runtimeconfig.json
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/bin/Debug/netcoreapp3.1/Opdracht2.runtimeconfig.dev.json
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/bin/Debug/netcoreapp3.1/Opdracht2.dll
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/bin/Debug/netcoreapp3.1/Opdracht2.pdb
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.csprojAssemblyReference.cache
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.csproj.CoreCompileInputs.cache
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.AssemblyInfoInputs.cache
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.AssemblyInfo.cs
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.dll
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.pdb
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.genruntimeconfig.cache
