@@ -1,8 +1,61 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 
 namespace Opdracht2
 {
+    public class Mp3Player
+    {
+        public int Id;
+        public string Make;
+        public string Model;
+        public int Mbsize;
+        public double Price;
+        
+        // constructor
+        public Mp3Player(int id, string make, string model, int mbsize, double price)
+        {
+            this.Id = id;
+            this.Make = make;
+            this.Model = model;
+            this.Mbsize = mbsize;
+            this.Price = price;
+        }
+
+        public Mp3Player()
+        {
+            // Empty
+        }
+
+        public List<Mp3Player> Init()
+        {
+            List<Mp3Player> l = new List<Mp3Player>();
+            
+            // te veel typen:
+            Mp3Player m1 = new Mp3Player();
+            m1.Id = 1;
+            m1.Make = "GET technologies .inc";
+            m1.Model = "HF 410";
+            m1.Mbsize = 4096;
+            m1.Price = 129.95;
+            l.Add(m1);
+            
+            // minder typen:
+            Mp3Player m2 = new Mp3Player(2, "Far & Loud", "XM 600", 8192, 224.95);
+            l.Add(m2);
+            
+            Mp3Player m3 = new Mp3Player(3, "Innotivative", "Z3", 512, 79.95);
+            l.Add(m3);
+            Mp3Player m4 = new Mp3Player(4, "Resistance S.A.", "3001", 4069, 124.95);
+            l.Add(m4);
+            Mp3Player m5 = new Mp3Player(5, "CBA", "NXT volume", 2048, 159.95);
+            l.Add(m5);
+            
+            return l;
+        }
+    } 
+    
+    
     public static class SoundSharp
     {
         public enum Status
@@ -85,6 +138,10 @@ namespace Opdracht2
     {
         static void Main(string[] args)
         {
+            List<Mp3Player> mp3Players = new List<Mp3Player>();
+            
+            
+            
             Console.WriteLine("Naam?");
             string name = Console.ReadLine();
             
