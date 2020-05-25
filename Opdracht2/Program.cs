@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 
 namespace Opdracht2
 {
     public class Mp3Player
     {
-        public int Id;
-        public string Make;
-        public string Model;
-        public int Mbsize;
-        public double Price;
+        private int Id;
+        private string Make;
+        private string Model;
+        private int Mbsize;
+        private double Price;
         
         // constructor
         public Mp3Player(int id, string make, string model, int mbsize, double price)
@@ -27,7 +29,7 @@ namespace Opdracht2
             // Empty
         }
 
-        public List<Mp3Player> Init()
+        public static List<Mp3Player> Init()
         {
             List<Mp3Player> l = new List<Mp3Player>();
             
@@ -58,6 +60,10 @@ namespace Opdracht2
     
     public static class SoundSharp
     {
+        public static List<Mp3Player> Mp3Players = new List<Mp3Player>();
+
+                
+        
         public enum Status
         {
             OK,
@@ -67,7 +73,9 @@ namespace Opdracht2
 
         private const string MainPassword = "";
         private const int MaxTries = 3;
-
+        
+        
+        
         public static Status LogIn()
         {
             int tries = 1;
@@ -88,6 +96,7 @@ namespace Opdracht2
 
                 if (pass == MainPassword)
                 {
+                    
                     return Status.OK;
                 }
                 else
@@ -131,6 +140,11 @@ namespace Opdracht2
                 }
             }
         }
+
+        public static void Menu1()
+        {
+            
+        }
     }
     
     
@@ -138,9 +152,6 @@ namespace Opdracht2
     {
         static void Main(string[] args)
         {
-            List<Mp3Player> mp3Players = new List<Mp3Player>();
-            
-            
             
             Console.WriteLine("Naam?");
             string name = Console.ReadLine();
