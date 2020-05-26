@@ -8,14 +8,14 @@ namespace Opdracht2
 {
     public class Mp3Player
     {    
-        // van private naar public
+        // van private naar public, zodat de velden beschikbaar zijn in de class SoundSharp
         public int Id;
         public string Make;
         public string Model;
         public int Mbsize;
         public double Price;
         
-        // testje:
+        // Publiekelijke lijst:
         public static List<Mp3Player> PlayerList = new List<Mp3Player>();
         
         
@@ -57,10 +57,13 @@ namespace Opdracht2
             
             Mp3Player m3 = new Mp3Player(3, "Innotivative", "Z3", 512, 79.95);
             //l.Add(m3);
+            Mp3Player.PlayerList.Add(m3);
             Mp3Player m4 = new Mp3Player(4, "Resistance S.A.", "3001", 4069, 124.95);
             //l.Add(m4);
+            Mp3Player.PlayerList.Add(m4);
             Mp3Player m5 = new Mp3Player(5, "CBA", "NXT volume", 2048, 159.95);
             //l.Add(m5);
+            Mp3Player.PlayerList.Add(m5);
             
             //return l;
         }
@@ -149,6 +152,8 @@ namespace Opdracht2
 
         public static void Menu1()
         {
+            // Aangezien de init is geweest, is de lijst gevuld en dus toegangelijk hier. En omdat de velden publiek zijn
+            // kunnen we ze hier aanpassen.
             foreach (Mp3Player m in Mp3Player.PlayerList)
             {
                 Console.WriteLine("[{0}] {1} - {2}: {3}Mb @ €{4}", m.Id, m.Make, m.Model, m.Mbsize, m.Price);
