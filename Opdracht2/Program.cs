@@ -7,12 +7,17 @@ using System.Security.Cryptography;
 namespace Opdracht2
 {
     public class Mp3Player
-    {
-        private int Id;
-        private string Make;
-        private string Model;
-        private int Mbsize;
-        private double Price;
+    {    
+        // van private naar public
+        public int Id;
+        public string Make;
+        public string Model;
+        public int Mbsize;
+        public double Price;
+        
+        // testje:
+        public static List<Mp3Player> PlayerList = new List<Mp3Player>();
+        
         
         // constructor
         public Mp3Player(int id, string make, string model, int mbsize, double price)
@@ -29,9 +34,10 @@ namespace Opdracht2
             // Empty
         }
 
-        public static List<Mp3Player> Init()
+        //public static List<Mp3Player> Init()
+        public static void Init()
         {
-            List<Mp3Player> l = new List<Mp3Player>();
+            // List<Mp3Player> l = new List<Mp3Player>();
             
             // te veel typen:
             Mp3Player m1 = new Mp3Player();
@@ -40,30 +46,29 @@ namespace Opdracht2
             m1.Model = "HF 410";
             m1.Mbsize = 4096;
             m1.Price = 129.95;
-            l.Add(m1);
+            //l.Add(m1);
+            // toevoegen aan de lijst die we nodig hebben
+            Mp3Player.PlayerList.Add(m1);
             
             // minder typen:
             Mp3Player m2 = new Mp3Player(2, "Far & Loud", "XM 600", 8192, 224.95);
-            l.Add(m2);
+            //l.Add(m2);
+            Mp3Player.PlayerList.Add(m2);
             
             Mp3Player m3 = new Mp3Player(3, "Innotivative", "Z3", 512, 79.95);
-            l.Add(m3);
+            //l.Add(m3);
             Mp3Player m4 = new Mp3Player(4, "Resistance S.A.", "3001", 4069, 124.95);
-            l.Add(m4);
+            //l.Add(m4);
             Mp3Player m5 = new Mp3Player(5, "CBA", "NXT volume", 2048, 159.95);
-            l.Add(m5);
+            //l.Add(m5);
             
-            return l;
+            //return l;
         }
     } 
     
     
     public static class SoundSharp
     {
-        public static List<Mp3Player> Mp3Players = new List<Mp3Player>();
-
-                
-        
         public enum Status
         {
             OK,
@@ -73,8 +78,6 @@ namespace Opdracht2
 
         private const string MainPassword = "";
         private const int MaxTries = 3;
-        
-        
         
         public static Status LogIn()
         {
@@ -96,7 +99,8 @@ namespace Opdracht2
 
                 if (pass == MainPassword)
                 {
-                    
+                    // lijst vullen
+                    Mp3Player.Init();
                     return Status.OK;
                 }
                 else
@@ -112,7 +116,6 @@ namespace Opdracht2
         public static void ShowMenu()
         {
             ConsoleKeyInfo menu = new ConsoleKeyInfo();
-            
             Console.Clear();
 
             Console.WriteLine("ShoundSharp MainMenu");
@@ -134,6 +137,9 @@ namespace Opdracht2
 
                 switch (menu.KeyChar)
                 {
+                    case '1':
+                        Menu1();
+                        break;
                     case '9':
                         Environment.Exit(1);
                         break;
@@ -143,7 +149,10 @@ namespace Opdracht2
 
         public static void Menu1()
         {
-            
+            foreach (Mp3Player m in Mp3Player.PlayerList)
+            {
+                Console.WriteLine("[{0}] {1} - {2}: {3}Mb @ €{4}", m.Id, m.Make, m.Model, m.Mbsize, m.Price);
+            }
         }
     }
     
@@ -152,6 +161,8 @@ namespace Opdracht2
     {
         static void Main(string[] args)
         {
+            //List<Mp3Player> Mp3Players = new List<Mp3Player>();
+            //Mp3Players = Mp3Player.Init();
             
             Console.WriteLine("Naam?");
             string name = Console.ReadLine();
