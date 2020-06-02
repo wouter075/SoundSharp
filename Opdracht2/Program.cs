@@ -14,19 +14,21 @@ namespace Opdracht2
         public string Model;
         public int Mbsize;
         public double Price;
+        public int Stock;
         
         // Publiekelijke lijst:
         public static List<Mp3Player> PlayerList = new List<Mp3Player>();
         
         
         // constructor
-        public Mp3Player(int id, string make, string model, int mbsize, double price)
+        public Mp3Player(int id, string make, string model, int mbsize, double price, int stock)
         {
             this.Id = id;
             this.Make = make;
             this.Model = model;
             this.Mbsize = mbsize;
             this.Price = price;
+            this.Stock = stock;
         }
 
         public Mp3Player()
@@ -46,22 +48,23 @@ namespace Opdracht2
             m1.Model = "HF 410";
             m1.Mbsize = 4096;
             m1.Price = 129.95;
+            m1.Stock = 500;
             //l.Add(m1);
             // toevoegen aan de lijst die we nodig hebben
             Mp3Player.PlayerList.Add(m1);
             
             // minder typen:
-            Mp3Player m2 = new Mp3Player(2, "Far & Loud", "XM 600", 8192, 224.95);
+            Mp3Player m2 = new Mp3Player(2, "Far & Loud", "XM 600", 8192, 224.95, 500);
             //l.Add(m2);
             Mp3Player.PlayerList.Add(m2);
             
-            Mp3Player m3 = new Mp3Player(3, "Innotivative", "Z3", 512, 79.95);
+            Mp3Player m3 = new Mp3Player(3, "Innotivative", "Z3", 512, 79.95, 500);
             //l.Add(m3);
             Mp3Player.PlayerList.Add(m3);
-            Mp3Player m4 = new Mp3Player(4, "Resistance S.A.", "3001", 4069, 124.95);
+            Mp3Player m4 = new Mp3Player(4, "Resistance S.A.", "3001", 4069, 124.95, 500);
             //l.Add(m4);
             Mp3Player.PlayerList.Add(m4);
-            Mp3Player m5 = new Mp3Player(5, "CBA", "NXT volume", 2048, 159.95);
+            Mp3Player m5 = new Mp3Player(5, "CBA", "NXT volume", 2048, 159.95, 500);
             //l.Add(m5);
             Mp3Player.PlayerList.Add(m5);
             
@@ -124,13 +127,13 @@ namespace Opdracht2
             Console.WriteLine("ShoundSharp MainMenu");
             Console.WriteLine();
             Console.WriteLine("1. Overzicht mp3 spelers");
-            Console.WriteLine("2. ");
+            Console.WriteLine("2. Overzicht voorraad");
             Console.WriteLine("3. ");
             Console.WriteLine("4. ");
             Console.WriteLine("5. ");
             Console.WriteLine("6. ");
             Console.WriteLine("7. ");
-            Console.WriteLine("8. ");
+            Console.WriteLine("8. Toon menu");
             Console.WriteLine("9. Exit");
 
             while (true)
@@ -142,6 +145,12 @@ namespace Opdracht2
                 {
                     case '1':
                         Menu1();
+                        break;
+                    case '2':
+                        Menu2();
+                        break;
+                    case '8':
+                        ShowMenu();
                         break;
                     case '9':
                         Environment.Exit(1);
@@ -157,6 +166,13 @@ namespace Opdracht2
             foreach (Mp3Player m in Mp3Player.PlayerList)
             {
                 Console.WriteLine("[{0}] {1} - {2}: {3}Mb @ €{4}", m.Id, m.Make, m.Model, m.Mbsize, m.Price);
+            }
+        }
+        public static void Menu2()
+        {
+            foreach (Mp3Player m in Mp3Player.PlayerList)
+            {
+                Console.WriteLine("[{0}] {1}", m.Id, m.Stock);
             }
         }
     }
