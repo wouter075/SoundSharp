@@ -128,7 +128,7 @@ namespace Opdracht2
             Console.WriteLine();
             Console.WriteLine("1. Overzicht mp3 spelers");
             Console.WriteLine("2. Overzicht voorraad");
-            Console.WriteLine("3. ");
+            Console.WriteLine("3. Muteer voorraad");
             Console.WriteLine("4. ");
             Console.WriteLine("5. ");
             Console.WriteLine("6. ");
@@ -148,6 +148,9 @@ namespace Opdracht2
                         break;
                     case '2':
                         Menu2();
+                        break;
+                    case '3':
+                        Menu3();
                         break;
                     case '8':
                         ShowMenu();
@@ -173,6 +176,77 @@ namespace Opdracht2
             foreach (Mp3Player m in Mp3Player.PlayerList)
             {
                 Console.WriteLine("[{0}] {1}", m.Id, m.Stock);
+            }
+        }
+
+        public static void Menu3()
+        {
+            // voer ID in
+            // fout: ID kan niet bestaan
+            
+            int id = 0;
+            bool exists = false;
+            int mutation = 0;
+            Mp3Player temp = new Mp3Player();
+            
+            Console.WriteLine("Voer een id in:");
+            try
+            {
+                id = Int32.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Fout id!");
+                Menu3();
+            }
+
+            foreach (Mp3Player m in Mp3Player.PlayerList)
+            {
+                if (m.Id == id)
+                {
+                    // bestaat!
+                    exists = true;
+                    temp = m;
+                    break;
+                }
+            }
+
+            if (!exists)
+            {
+                Console.WriteLine("Ingevoerde id bestaat niet!");
+                Menu3();
+            }
+
+            // mutatie vragen
+            // fout: kan geen nummer zijn.
+            Console.WriteLine("Voer mutatie in:");
+            try
+            {
+                mutation = Int32.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Foute mutatie");
+                Menu3();
+            }
+            
+            // mutatie controleren
+            // fout: niet onder de 0.
+            if (temp.Stock + mutation < 0)
+            {
+                Console.WriteLine("Mutatie niet uitgevoerd: voorraad mag niet negatief worden.");
+                Menu3();
+            }
+            
+            // mutatie uitvoeren
+            // Console.WriteLine("Mutatie: {0}", mutation);
+            foreach (Mp3Player m in Mp3Player.PlayerList)
+            {
+                if (m.Id == id)
+                {
+                    m.Stock += mutation;
+                    break;
+                }
             }
         }
     }
