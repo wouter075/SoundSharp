@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
+using MoreLinq;
 
 namespace Opdracht2
 {
@@ -261,10 +262,12 @@ namespace Opdracht2
             int totalstock = Mp3Player.PlayerList.Sum(x => x.Stock);
             double totalvalue = Mp3Player.PlayerList.Sum(x => x.Stock * x.Price);
             double avaragevalue = Mp3Player.PlayerList.Average(x => x.Price);
+            var pricemb = Mp3Player.PlayerList.MinBy(x => x.Price / x.Mbsize).First();
             
             Console.WriteLine("Totaal aantal mp3 spelers in voorraad: {0}", totalstock);
             Console.WriteLine("Totale waarde mp3 spelers in voorraad: €{0}", totalvalue);
             Console.WriteLine("Gemiddelde prijs mp3 speler: €{0}", avaragevalue);
+            Console.WriteLine("Mp3 speler met de beste prijs per Mb: {0}, {1} - {2}", pricemb.Id, pricemb.Make, pricemb.Model);
             
         }
     }
