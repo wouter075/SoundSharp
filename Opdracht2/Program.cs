@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -129,7 +130,7 @@ namespace Opdracht2
             Console.WriteLine("1. Overzicht mp3 spelers");
             Console.WriteLine("2. Overzicht voorraad");
             Console.WriteLine("3. Muteer voorraad");
-            Console.WriteLine("4. ");
+            Console.WriteLine("4. Statistieken");
             Console.WriteLine("5. ");
             Console.WriteLine("6. ");
             Console.WriteLine("7. ");
@@ -151,6 +152,9 @@ namespace Opdracht2
                         break;
                     case '3':
                         Menu3();
+                        break;
+                    case '4':
+                        Menu4();
                         break;
                     case '8':
                         ShowMenu();
@@ -250,6 +254,18 @@ namespace Opdracht2
             }
 
             Console.WriteLine("Mutatie uitgevoerd");
+        }
+
+        public static void Menu4()
+        {
+            int totalstock = Mp3Player.PlayerList.Sum(x => x.Stock);
+            double totalvalue = Mp3Player.PlayerList.Sum(x => x.Stock * x.Price);
+            double avaragevalue = Mp3Player.PlayerList.Average(x => x.Price);
+            
+            Console.WriteLine("Totaal aantal mp3 spelers in voorraad: {0}", totalstock);
+            Console.WriteLine("Totale waarde mp3 spelers in voorraad: €{0}", totalvalue);
+            Console.WriteLine("Gemiddelde prijs mp3 speler: €{0}", avaragevalue);
+            
         }
     }
     
