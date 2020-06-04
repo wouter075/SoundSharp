@@ -10,3 +10,5 @@
 /Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.dll
 /Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.pdb
 /Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.genruntimeconfig.cache
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/bin/Debug/netcoreapp3.1/MoreLinq.dll
+/Users/hlw1404/RiderProjects/SoundSharp/Opdracht2/obj/Debug/netcoreapp3.1/Opdracht2.csproj.CopyComplete

@@ -132,7 +132,7 @@ namespace Opdracht2
             Console.WriteLine("2. Overzicht voorraad");
             Console.WriteLine("3. Muteer voorraad");
             Console.WriteLine("4. Statistieken");
-            Console.WriteLine("5. ");
+            Console.WriteLine("5. Toevoegen mp3 speler");
             Console.WriteLine("6. ");
             Console.WriteLine("7. ");
             Console.WriteLine("8. Toon menu");
@@ -156,6 +156,9 @@ namespace Opdracht2
                         break;
                     case '4':
                         Menu4();
+                        break;
+                    case '5':
+                        Menu5();
                         break;
                     case '8':
                         ShowMenu();
@@ -268,7 +271,59 @@ namespace Opdracht2
             Console.WriteLine("Totale waarde mp3 spelers in voorraad: €{0}", totalvalue);
             Console.WriteLine("Gemiddelde prijs mp3 speler: €{0}", avaragevalue);
             Console.WriteLine("Mp3 speler met de beste prijs per Mb: {0}, {1} - {2}", pricemb.Id, pricemb.Make, pricemb.Model);
+        }
+
+        public static void Menu5()
+        {
+            string make;
+            string model;
+            int mbsize = 0;
+            double price = 0;
+            Mp3Player m = new Mp3Player();
+
+            Console.WriteLine("Merk?");
+            make = Console.ReadLine();
             
+            Console.WriteLine("Model?");
+            model = Console.ReadLine();
+
+            Console.WriteLine("Mb?");
+            try
+            {
+                mbsize = Int32.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Foute grote, dit kan alleen een geheel getal zijn!");
+                Menu5();
+            }
+            
+            Console.WriteLine("Price?");
+            try
+            {
+                price = double.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Dat is geen prijs!");
+                Menu5();
+            }
+            
+            // nieuwe mp3 speler maken en toevoegen:
+            m.Id = NewId();
+            m.Make = make;
+            m.Mbsize = mbsize;
+            m.Model = model;
+            m.Price = price;
+            m.Stock = 0;
+            
+            Mp3Player.PlayerList.Add(m);
+            Console.WriteLine("Speler met succes toegevoegd!");
+        }
+
+        public static int NewId()
+        {
+            return Mp3Player.PlayerList.Max(x => x.Id) + 1;
         }
     }
     
