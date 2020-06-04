@@ -248,6 +248,8 @@ namespace Opdracht2
                     break;
                 }
             }
+
+            Console.WriteLine("Mutatie uitgevoerd");
         }
     }
     
